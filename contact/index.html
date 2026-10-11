@@ -7,28 +7,28 @@
     <title>Contact Me</title>
 </head>
 <body>
-    <h1>Contact</h1>
     <nav aria-label="Main navigation">
         <a href="../index.html">Home</a>
-        <a href="index.html">Contact</a>
+        <a href="index.html" class="current">Contact</a>
         <a href="../projects/index.html">Projects</a>
-        <a href="../resume.html">Resume</a>
+        <a href="../resume/index.html">Resume</a>
+        <a href="https://github.com/AndIFellInTheRiver" target="_blank">GitHub</a>
     </nav>
-    <form
-    action="mailto:hal150@ucsd.edu"
-    method="POST"
-    enctype="text/plain"
-    >
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+    <h1>Contact</h1>
+    <form action="mailto:hal150@ucsd.edu" method="POST" enctype="text/plain" onsubmit="alert('Email app started!');">
+        <label>
+            Name: <input type="text" name="name" required>
+        </label>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <label>
+            Email: <input type="email" name="email" required>
+        </label>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
+        <label>
+            Message: <textarea name="message" required></textarea>
+        </label>
 
-        <button>Send Message</button>
+        <button>Send Email</button>
     </form>
 </body>
 </html>
