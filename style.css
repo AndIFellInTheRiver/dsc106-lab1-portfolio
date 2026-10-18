@@ -1,3 +1,7 @@
+:root {
+  color-scheme: light dark;
+}
+
 body {
   /* 
   Set line height to 1.5 times the font size 
@@ -9,11 +13,12 @@ body {
   padding-inline: 1em;
 }
 
-/* Styling the navigation bar*/
+/*styling the navigation bar*/
 nav {
+    --border-color: oklch(50% 10% 200 / 40%);
     display: flex;
     margin-bottom: 2em;
-    border-bottom: 1px solid oklch(54% 30% 254);
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -24,8 +29,12 @@ nav a {
     padding: 0.5em;
 }
 
+nav a:visited {
+    color: inherit;
+}
+
 nav a.current {
-    border-bottom: 0.4em solid oklch(54% 30% 254);
+    border-bottom: 0.4em solid var(--border-color);
     padding-bottom: 0.1em;
 }
 
@@ -37,10 +46,10 @@ html {
 nav a:hover {
     border-bottom: 0.4em solid var(--color-accent);
     padding-bottom: 0.1em;
-    background-color: oklch(from var(--color-accent) 95% 5% h);
+    background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
-/* Styling the form elements */
+/*styling the form elements*/
 input,
 textarea,
 button {
@@ -70,7 +79,7 @@ textarea {
     resize: vertical;
 }
 
-/* Styling the projects */
+/*styling the projects*/
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -101,14 +110,13 @@ h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
 
-/* Styling the resume */
-/* Resume layout */
+/*styling the resume-resume layout*/
 .resume {
     text-align: left;
     padding-bottom: 3em;
 }
 
-/* Name and contact details */
+/*name and contact details*/
 .resume header {
     text-align: center;
     padding: 2em 0;
@@ -128,37 +136,36 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-accent);
 }
 
-/* Resume sections */
+/*resume sections*/
 .resume section {
     margin-bottom: 2em;
 }
 
 .resume section h2 {
     font-size: 1.6em;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid oklch(50% 10% 200 / 40%);
     padding-bottom: 0.4em;
     margin-bottom: 1em;
 }
 
-/* Education and job */
+/*education and job*/
 .resume article {
     padding: 1em;
     margin-bottom: 1em;
-    background: #f7f8fa;
+    background: color-mix(in oklch, canvasText 5%, canvas);
     border-radius: 8px;
 }
 
 .resume article h3 {
     margin-top: 0;
     margin-bottom: 0.5em;
-    color: #222;
 }
 
 .resume article p {
     margin: 0.5em 0;
 }
 
-/* Bullet points */
+/*bullet points*/
 .resume ul {
     padding-left: 1.5em;
     margin: 0.5em 0;
@@ -168,4 +175,17 @@ h1, h2, h3, h4, h5, h6 {
 .resume li {
     margin-bottom: 0.5em;
     line-height: 1.5;
+}
+
+/*dark mode switcher*/
+.color-scheme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 80%;
+    font-family: inherit;
+}
+
+.color-scheme select {
+    font: inherit;
 }
