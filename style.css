@@ -189,3 +189,33 @@ h1, h2, h3, h4, h5, h6 {
 .color-scheme select {
     font: inherit;
 }
+
+/*styling the GitHub stats*/
+#profile-stats {
+    background: color-mix(in oklch, canvasText 5%, canvas);
+    padding: 1.5em;
+    border-radius: 12px;
+    margin-top: 1em;
+}
+
+#profile-stats dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    margin: 0;
+}
+
+#profile-stats dt {
+    grid-row: 1;
+    font-size: 0.8em;
+    color: color-mix(in oklch, canvasText 60%, canvas);
+    text-transform: uppercase;
+}
+
+#profile-stats dd {
+    grid-row: 2;
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+    color: canvasText;
+}
