@@ -219,3 +219,101 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     color: canvasText;
 }
+
+/*project years*/
+.project-year {
+    color: gray;
+    font-family: Baskerville, serif;
+    font-variant-numeric: oldstyle-nums;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/*projects pie plot*/
+#projects-pie-plot {
+    max-width: 20em;
+    margin-block: 2em;
+    overflow: visible;
+}
+
+/*project pie plot legend*/
+.legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 1em;
+    padding: 1em;
+    margin-block: 2em;
+    border: 1px solid oklch(50% 10% 200 / 40%);
+    border-radius: 8px;
+    list-style: none;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.swatch {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color);
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.legend-item em {
+    color: gray;
+}
+
+/*legend layout */
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.container .legend {
+    flex: 1;
+}
+
+/*search bar*/
+.searchBar {
+    width: 100%;
+    padding: 0.7em;
+    margin-bottom: 2em;
+    border: 1px solid oklch(50% 10% 200 / 40%);
+    border-radius: 6px;
+    font: inherit;
+    background: canvas;
+    color: canvasText;
+}
+
+/*pie chart hover effect */
+
+#projects-pie-plot path {
+    transition: 300ms;
+    cursor: pointer;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+    opacity: 0.5;
+}
+
+/*highlight selected slice*/
+
+.selected {
+    --color: oklch(60% 45% 0) !important;
+}
+
+#projects-pie-plot path.selected {
+    fill: var(--color);
+}
+
+.legend-item.selected {
+    color: var(--color);
+    font-weight: bold;
+}
