@@ -1,6 +1,13 @@
 
 [
   {
+		"title": "Biker's Fault",
+		"year": 2026,
+		"image": "./images/bikers-fault.png",
+		"description": "An interactive map of Boston and Cambridge bike lanes and Bluebikes stations. Built with Mapbox and D3 to visualize station traffic, departures, arrivals, and changes throughout the day.",
+		"url": "https://andifellintheriver.github.io/biker-s-fault/"
+	},
+  {
     "title": "Lorem ipsum dolor sit.",
     "year": 2024,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
@@ -71,5 +78,5 @@
     "year": 2025,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Consectetur illum reiciendis, quaerat quisquam corrupti non maiores, error placeat minima nesciunt eum. Ad aspernatur quam architecto praesentium harum reprehenderit quibusdam blanditiis mollitia soluta, atque libero qui cum consequatur pariatur."
-  }
+	}
 ]

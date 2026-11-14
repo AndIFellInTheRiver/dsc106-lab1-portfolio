@@ -116,22 +116,24 @@ export async function fetchJSON(url) {
 
 //render projects
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
-  containerElement.innerHTML = '';
+	containerElement.innerHTML = '';
 
-  for (let project of projects) {
-    const article = document.createElement('article');
+	for (let project of projects) {
+		const article = document.createElement('article');
+		const imageURL = new URL(project.image, import.meta.url).href;
 
-    article.innerHTML = `
-      <${headingLevel}>${project.title}</${headingLevel}>
-      <img src="${project.image}" alt="${project.title}">
-      <div>
-        <p>${project.description}</p>
-        <p class="project-year">${project.year}</p>
-      </div>
-    `;
+		article.innerHTML = `
+			<${headingLevel}>${project.title}</${headingLevel}>
+			<img src="${imageURL}" alt="${project.title}">
+			<div>
+				<p>${project.description}</p>
+				<p class="project-year">${project.year}</p>
+				${project.url ? `<p><a href="${project.url}" target="_blank" rel="noopener noreferrer">View project</a></p>` : ''}
+			</div>
+		`;
 
-    containerElement.appendChild(article);
-  }
+		containerElement.appendChild(article);
+	}
 }
 
 //github api fetch
