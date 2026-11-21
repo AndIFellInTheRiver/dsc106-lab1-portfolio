@@ -17,16 +17,37 @@
 
     <p>This page explores statistics about the code and Git history of my portfolio website.</p>
 
+    <!--time filter-->
+    <div class="commit-filter">
+        <label for="commit-progress">Show commits until:</label>
+        <input type="range" id="commit-progress" min="0" max="100" value="100" step="0.1">
+        <time id="commit-time"></time>
+    </div>
+
     <div id="stats"></div>
-    
+
+    <!--scroll-based narrative-->
     <h2>Commits by time of day</h2>
-    <div id="chart"></div>
+    <div id="scrolly-1">
+        <div id="scatter-story"></div>
+        <div id="scatter-plot">
+            <div id="chart"></div>
+            <p id="selection-count">No commits selected</p>
+            <dl id="language-breakdown" class="stats"></dl>
+        </div>
+    </div>
 
-    <p id="selection-count">No commits selected</p>
-    
-    <dl id="language-breakdown" class="stats"></dl>
+    <!--file size unit visualization-->
+    <h2>File sizes over time</h2>
+    <p>Each dot represents one line of code recorded in a commit. Colors indicate file type.</p>
+    <div id="scrolly-2">
+        <div id="file-story"></div>
+        <div id="file-plot">
+            <dl id="files"></dl>
+        </div>
+    </div>
 
-    <!-- Commit tooltip -->
+    <!--commit tooltip-->
     <dl id="commit-tooltip" class="info tooltip" hidden>
         <dt>Commit</dt>
         <dd>
@@ -37,7 +58,7 @@
         <dd id="commit-date"></dd>
 
         <dt>Time</dt>
-        <dd id="commit-time"></dd>
+        <dd id="tooltip-commit-time"></dd>
 
         <dt>Author</dt>
         <dd id="commit-author"></dd>
